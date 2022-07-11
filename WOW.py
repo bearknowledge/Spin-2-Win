@@ -2,11 +2,9 @@ import asyncio
 import random
 import discord
 from discord.ext import commands
-from config import *
 
 
-
-bot = commands.Bot(command_prefix=PREFIX, description = "WOW")
+bot = commands.Bot(command_prefix='!', description = "WOW")
 
 @bot.event
 async def on_ready():
@@ -64,4 +62,4 @@ async def reset(ctx):
 
 
 
-bot.run(TOKEN, bot=True, reconnect=True)
+bot.run('OTk0NDAyOTQ4MjYyMTUwMjQ1.GykQoN.O6oYSYhkRrvKjHl9hM3PhJoUqJPrYZLtRBpHfY', bot=True, reconnect=True)

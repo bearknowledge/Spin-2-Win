@@ -1,7 +1,7 @@
 import asyncio
 import random
 import discord
-from discord.ext.commands import has_permissions
+from discord.ext import has_permissions, commands
 
 
 bot = commands.Bot(command_prefix='!', description = "WOW")

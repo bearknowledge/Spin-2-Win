@@ -1,7 +1,7 @@
 import asyncio
 import random
 import discord
-from discord.ext import has_permissions, commands
+from discord.ext import commands
 
 
 bot = commands.Bot(command_prefix='!', description = "WOW")
@@ -42,21 +42,22 @@ async def spin(ctx):
 async def rules(ctx):
   await ctx.send('Let`s play Wheel of Winners 🕹!\n\nHow to play:\n\n1.) Type "!spin" to spin the Wheel of Winners\n2.) Players are allowed to spin 1 time per day (M-F) unless they earn another spin as a prize\n3.) All winners will be recorded daily and prizes will be sent out on a weekly basis\n4.) There is an ongoing competition for the best submission for a response after a spin. If you are selected, you will receive 3 $POP! Send in your submissions in the "Submissions" Channel\n5.) Have fun and invite whoever you feel would enjoy Wheel of Winners!')
 
+
 @bot.command()
-@has_permissions(manage_roles= True)
+@commands.is_owner()
 async def winners(ctx):
   await ctx.send('Today`s winners:')
   await ctx.send(dailywinnerlist)
 
 @bot.command()
-@has_permissions(manage_roles= True)
+@commands.is_owner()
 async def new(ctx):
   userlist.clear()
   dailywinnerlist.clear()
   await ctx.send('New Game!')
 
 @bot.command()
-@has_permissions(manage_roles= True)
+@commands.is_owner()
 async def reset(ctx):
   userlist.clear()
   dailywinnerlist.clear()
